@@ -43,4 +43,8 @@
   [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
+- (void)test {
+    
+}
+
 @end
