@@ -4,9 +4,8 @@
 
 @protocol VKScrubberDelegate <NSObject>
 @optional
-- (void)scrubberDidBeginScrubbing:(VKScrubber*)scrubber;
-- (void)scrubberDidEndScrubbing:(VKScrubber*)scrubber;
-- (void)scrubberValueDidChange:(VKScrubber*)scrubber;
+- (void)scrubbingBegin;
+- (void)scrubbingEnd;
 @end
 
 @interface VKScrubber : VKSlider

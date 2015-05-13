@@ -10,32 +10,31 @@
 
 - (void) initialize {
 
-  [self setMaximumTrackImage:[[UIImage imageNamed:@"v3_scrubber_track_min_4_4.png"]
+  [self setMaximumTrackImage:[[UIImage imageNamed:@"VKScrubber_max"]
       resizableImageWithCapInsets:UIEdgeInsetsMake(0, 4, 0, 4)]
       forState:UIControlStateNormal];
-  [self setMinimumTrackImage:[[UIImage imageNamed:@"v3_scrubber_track_max_4_4.png"]
+  [self setMinimumTrackImage:[[UIImage imageNamed:@"VKScrubber_min"]
       resizableImageWithCapInsets:UIEdgeInsetsMake(0, 4, 0, 4)]
       forState:UIControlStateNormal];
-  [self setThumbImage:[UIImage imageNamed:@"v3_scrubber_thumb.png"]
+  [self setThumbImage:[UIImage imageNamed:@"VKScrubber_thumb"]
       forState:UIControlStateNormal];
   
-  [self addTarget:self action:@selector(scrubbingDidBegin) forControlEvents:UIControlEventTouchDown];
-  [self addTarget:self action:@selector(scrubbingDidEnd) forControlEvents:UIControlEventTouchUpInside|UIControlEventTouchUpOutside|UIControlEventTouchCancel];
+  [self addTarget:self action:@selector(scrubbingBegin) forControlEvents:UIControlEventTouchDown];
+  [self addTarget:self action:@selector(scrubbingEnd) forControlEvents:UIControlEventTouchUpInside|UIControlEventTouchUpOutside|UIControlEventTouchCancel];
   [self addTarget:self action:@selector(scrubberValueChanged) forControlEvents:UIControlEventValueChanged];
   
   self.exclusiveTouch = YES;
 }
 
-- (void)scrubbingDidBegin {
-  [self.delegate scrubberDidBeginScrubbing:self];
+- (void)scrubbingBegin {
+  [self.delegate scrubbingBegin];
 }
 
 - (void)scrubbingDidEnd {
-  [self.delegate scrubberDidEndScrubbing:self];
+  [self.delegate scrubbingEnd:self];
 }
 
 - (void)scrubberValueChanged {
-  [self.delegate scrubberValueDidChange:self];
 }
 
 
