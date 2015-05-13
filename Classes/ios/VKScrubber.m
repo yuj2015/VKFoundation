@@ -38,10 +38,11 @@
   [self.delegate scrubberValueDidChange:self];
 }
 
-- (void)setValue:(float)value animated:(BOOL)animated {
-  [super setValue:value animated:animated];
-  [self sendActionsForControlEvents:UIControlEventValueChanged];
-}
+
+//- (void)setValue:(float)value animated:(BOOL)animated {
+//  [super setValue:value animated:animated];
+//  [self sendActionsForControlEvents:UIControlEventValueChanged];
+//}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     CGRect t = [self trackRectForBounds: [self bounds]];
