@@ -30,8 +30,8 @@
   [self.delegate scrubbingBegin];
 }
 
-- (void)scrubbingDidEnd {
-  [self.delegate scrubbingEnd:self];
+- (void)scrubbingEnd {
+  [self.delegate scrubbingEnd];
 }
 
 - (void)scrubberValueChanged {
